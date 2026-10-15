@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gemma 3 4B download</title>
+<meta name="theme-color" content="#0b0b0e">
+<style>
+  :root {
+    --bg: #0b0b0e; --card: #17171c; --line: #26262e; --text: #ececf1; --muted: #9a9aa8;
+    --accent: #8f7cf0; --accent-2: #24aa8c; --btn-text: #0b0b0e;
+  }
+  @media (prefers-color-scheme: light) {
+    :root { --bg: #f6f6f9; --card: #ffffff; --line: #e3e3ea; --text: #17171c; --muted: #636372; --accent: #5b45d6; --accent-2: #12806a; --btn-text: #ffffff; }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 560px; margin: 0 auto; padding: 28px 16px 56px; }
+  h1 { font-size: 26px; line-height: 1.2; margin: 0 0 6px; letter-spacing: -.01em; }
+  .sub { color: var(--muted); margin: 0 0 22px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 16px; margin: 0 0 14px; }
+  .card h2 { font-size: 17px; margin: 0 0 2px; }
+  .meta { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .meta b { color: var(--text); font-weight: 600; }
+  .btn { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; width: 100%; padding: 12px 16px; border: 0; border-radius: 14px;
+         background: var(--accent); color: var(--btn-text); font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; }
+  .btn.alt { background: transparent; color: var(--text); border: 1px solid var(--line); margin-top: 8px; min-height: 46px; font-weight: 500; font-size: 15px; }
+  .btn:active { opacity: .85; }
+  .all { background: var(--accent-2); margin: 4px 0 22px; }
+  ol { margin: 0; padding-left: 20px; }
+  ol li { margin: 0 0 10px; }
+  code, .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 13.5px; background: var(--bg); border: 1px solid var(--line); border-radius: 7px; padding: 1px 6px; white-space: nowrap; }
+  .hash { white-space: normal; word-break: break-all; }
+  details { margin-top: 6px; color: var(--muted); font-size: 14px; }
+  summary { cursor: pointer; padding: 6px 0; }
+  .ext { display: inline-block; background: var(--accent); color: var(--btn-text); border-radius: 8px; padding: 0 8px; font-weight: 700; }
+  #note { min-height: 22px; color: var(--accent-2); font-size: 14px; margin: -14px 0 14px; }
+  h3 { font-size: 15px; margin: 22px 0 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Gemma 3 4B for Xemn</h1>
+  <p class="sub">The two files for Local mode (<b>gemma3:4b-it-qat</b>, text and pictures). About 4 GB in total. Use Wi-Fi and keep 5 GB free.</p>
+
+  <a class="btn all" id="both" href="#">Download both files</a>
+  <div id="note" aria-live="polite"></div>
+
+  <section class="card">
+    <h2>1. The model</h2>
+    <p class="meta"><b>3.16 GB</b> &middot; save as <span class="mono">gemma3-4b.gguf</span></p>
+    <a class="btn" id="a1" href="https://registry.ollama.ai/v2/library/gemma3/blobs/sha256:76aed0a8285b83102f18b5d60e53c70d09eb4e9917a20ce8956bd546452b56e2" target="_blank" rel="noopener" download="gemma3-4b.gguf">Download the model</a>
+    <button class="btn alt" type="button" data-copy="a1">Copy link</button>
+  </section>
+
+  <section class="card">
+    <h2>2. The vision part</h2>
+    <p class="meta"><b>851 MB</b> &middot; save as <span class="mono">gemma3-4b-vision.gguf</span></p>
+    <a class="btn" id="a2" href="https://registry.ollama.ai/v2/library/gemma3/blobs/sha256:8c0fb064b019a6972856aaae2c7e4792858af3ca4561be2dbf649123ba6c40cb" target="_blank" rel="noopener" download="gemma3-4b-vision.gguf">Download the vision part</a>
+    <button class="btn alt" type="button" data-copy="a2">Copy link</button>
+  </section>
+
+  <h3>Then on your PC</h3>
+  <section class="card">
+    <ol>
+      <li>Move both files to the <b>Downloads</b> folder (USB cable, Google Drive, Nearby Share, anything).</li>
+      <li>Both files are <span class="ext">.gguf</span>. If your phone saved them as <code>data</code> or without an extension, rename them to <code>gemma3-4b.gguf</code> (the big one) and <code>gemma3-4b-vision.gguf</code> (the small one). Renaming is only for tidiness: Xemn recognises the files by their size and checksum, whatever they are called.</li>
+      <li>In the xemn-ai folder run <code>python start_xemn.py</code>. It finds the two files, checks them, moves them into Ollama and starts everything.</li>
+    </ol>
+    <details>
+      <summary>How to check the files are complete</summary>
+      <p>Exact sizes: the model is <b>3,155,051,328</b> bytes, the vision part is <b>851,251,104</b> bytes. If a file is smaller, the download stopped early: download it again. Xemn also checks the SHA-256 and tells you if a file is damaged.</p>
+      <p class="mono hash" style="display:block;margin:6px 0">76aed0a8285b83102f18b5d60e53c70d09eb4e9917a20ce8956bd546452b56e2</p>
+      <p class="mono hash" style="display:block;margin:6px 0">8c0fb064b019a6972856aaae2c7e4792858af3ca4561be2dbf649123ba6c40cb</p>
+    </details>
+    <details>
+      <summary>If a download won't start</summary>
+      <p>Tap and hold the button, choose "Download link", or use "Copy link" and paste it in a new tab. The files come straight from Ollama's public model server (registry.ollama.ai), nothing passes through this page.</p>
+    </details>
+  </section>
+</main>
+<script>
+(function () {
+  var note = document.getElementById("note");
+  function say(t) { note.textContent = t; }
+  document.getElementById("both").addEventListener("click", function (e) {
+    e.preventDefault();
+    var a1 = document.getElementById("a1"), a2 = document.getElementById("a2");
+    say("Starting the model download. If your phone asks, allow multiple downloads.");
+    a1.click();
+    setTimeout(function () { a2.click(); say("Both downloads started. Check your notifications or the Downloads list."); }, 2500);
+  });
+  document.querySelectorAll("[data-copy]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var url = document.getElementById(b.dataset.copy).href;
+      function done() { b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy link"; }, 1600); }
+      try { navigator.clipboard.writeText(url).then(done, function () { window.prompt("Copy this link", url); }); }
+      catch (e) { window.prompt("Copy this link", url); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
